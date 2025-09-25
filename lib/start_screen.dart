@@ -9,7 +9,7 @@ class StartScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Image.asset(
-            'assets/images/quiz-logo.png',
+            'assets/quiz-logo.png',
             width: 300,
           ),
           const SizedBox(
