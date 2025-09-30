@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/answer_button.dart';
 import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/models/quiz.question.dart';
 class QuestionsScreen extends StatefulWidget{
@@ -21,37 +22,32 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     });
   }
   @override
-  Widget build(BuildContext context) {
+ Widget build(BuildContext context) {
     final currentQuestion = questions[currentQuestionIndex];
     return SizedBox(
       width: double.infinity,
-      child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text(
-          "the question text",
-          style: TextStyle(
-            color: Colors.white,
-          ),
+      child: Container(
+        margin: EdgeInsets.all(20),
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+            Text(
+              currentQuestion.text,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 30,),
+            ...currentQuestion.getShuffledAnswers().map((item) {
+              return AnswerButton(
+                answerText: item, 
+                onTap: answerQuestion,
+                );
+            }),
+          ],
         ),
-        const SizedBox(height: 30,),
-        ElevatedButton(
-          onPressed:  () {} ,
-          child: const Text("Answer 1"),
-        ),
-        ElevatedButton(
-          onPressed:  () {} ,
-          child: const Text("Answer 2"),
-        ),
-        ElevatedButton(
-          onPressed:  () {} ,
-          child: const Text("Answer "),
-        ),
-        ElevatedButton(
-          onPressed:  () {} ,
-          child: const Text("Answer 4"),
-        ),
-      ]
       ),
     );
   }
