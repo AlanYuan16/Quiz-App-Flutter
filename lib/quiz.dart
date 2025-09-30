@@ -31,7 +31,7 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
-
+    
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -41,7 +41,7 @@ class _QuizState extends State<Quiz> {
                 Color.fromARGB(255, 78, 13, 151),
                 Color.fromARGB(255, 107, 15, 168),
               ],
-
+              
             ),
           ),
           child: activeScreen,

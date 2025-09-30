@@ -1,30 +1,49 @@
 import 'package:flutter/material.dart';
 
-class QuestionScreen extends StatefulWidget{
-  const QuestionScreen({super.key});
+class QuestionsScreen extends StatefulWidget{
+   const QuestionsScreen({super.key});
+
   
+
   @override
-  State<QuestionScreen> createState() {
-    return _QuestionScreenState();
+  State<QuestionsScreen> createState() {
+    return _QuestionsScreenState();
   }
 }
 
-
-class _QuestionScreenState extends State<QuestionScreen>{
+class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
-  Widget build(BuildContext context){
-    return SizedBox(width: double.infinity,child:
-      Column(children: [
-      const Text("The questions"),
-      const SizedBox(height: 30),
-      ElevatedButton(onPressed: (){}, child: const Text("ansWer 1")),
-      ElevatedButton(onPressed: (){}, child: const Text("ansWer 2")),
-      ElevatedButton(onPressed: (){}, child: const Text("ansWer 3")),
-      ElevatedButton(onPressed: (){}, child: const Text("ansWer 4")),
-
-
-    ],
-    )
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          "the question text",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        const SizedBox(height: 30,),
+        ElevatedButton(
+          onPressed:  () {} ,
+          child: const Text("Answer 1"),
+        ),
+        ElevatedButton(
+          onPressed:  () {} ,
+          child: const Text("Answer 2"),
+        ),
+        ElevatedButton(
+          onPressed:  () {} ,
+          child: const Text("Answer "),
+        ),
+        ElevatedButton(
+          onPressed:  () {} ,
+          child: const Text("Answer 4"),
+        ),
+      ]
+      ),
     );
   }
 }
