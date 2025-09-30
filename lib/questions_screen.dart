@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:quiz_app/data/questions.dart';
+import 'package:quiz_app/models/quiz.question.dart';
 class QuestionsScreen extends StatefulWidget{
    const QuestionsScreen({super.key});
 
@@ -12,8 +13,16 @@ class QuestionsScreen extends StatefulWidget{
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
+  var currentQuestionIndex = 0;
+
+  void answerQuestion() {
+    setState(() {
+      currentQuestionIndex ++;
+    });
+  }
   @override
   Widget build(BuildContext context) {
+    final currentQuestion = questions[currentQuestionIndex];
     return SizedBox(
       width: double.infinity,
       child: Column(
